@@ -71,7 +71,7 @@ public class Main {
         while (true) {
             boolean anyAvailable = false;
 
-            System.out.println("\n--- Available Books ---");
+            System.out.println(" Available Books");
             for (Book book : inventory) {
                 if (!book.getIsCheckedOut()) {
                     System.out.println("Title: " + book.getTitle() + ", ID: " + book.getId() + ", ISBN: " + book.getIsbn());
@@ -83,7 +83,7 @@ public class Main {
                 System.out.println("No books available at the moment.");
             }
 
-            System.out.println("\nOptions:");
+            System.out.println("Options:");
             System.out.println("1) Check out a book");
             System.out.println("2) Return to Home Screen");
             int option = scanner.nextInt();
@@ -151,9 +151,9 @@ public class Main {
 
     public static void checkInBook(Book[] inventory) {
         while (true) {
-            System.out.print("Enter the ID of the book to check in (or 2 to return): ");
+            System.out.print("Enter the ID of the book to check in (or 0 to return): ");
             int bookId = scanner.nextInt();
-            if (bookId == 2) return;
+            if (bookId == 0) return;
 
             boolean found = false;
 
@@ -181,9 +181,9 @@ public class Main {
 
     public static void searchForBook(Book[] inventory) {
         while (true) {
-            System.out.print("Enter the ID of the book to search for (or 2 to return to Home): ");
+            System.out.print("Enter the ID of the book to search for (or 0 to return to Home): ");
             int id = scanner.nextInt();
-            if (id == 2) return;
+            if (id == 0) return;
 
             boolean found = false;
             for (Book book : inventory) {
