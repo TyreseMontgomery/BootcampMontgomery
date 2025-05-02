@@ -148,28 +148,30 @@ class Main {
             System.out.println("5) Search by Vendor");
             System.out.println("0) Back to Home");
             System.out.print("Please select an option: ");
-            String choice = scanner.nextLine().toUpperCase();
-
+            int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
-                case "1":
+                case 1:
                     displayTransactions(Ledger.getMonthToDateReport());
                     break;
-                case "2":
+                case 2:
                     displayTransactions(Ledger.getPreviousMonthReport());
                     break;
-                case "3":
+                case 3:
                     displayTransactions(Ledger.getYearToDateReport());
                     break;
-                case "4":
+                case 4:
                     displayTransactions(Ledger.getPreviousYearReport());
                     break;
-                case "5":
+                case 5:
                     searchByVendor();
-
+                    break;
+                case 0:
                     viewingReports = false;
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");
+                    break;
             }
         }
     }
