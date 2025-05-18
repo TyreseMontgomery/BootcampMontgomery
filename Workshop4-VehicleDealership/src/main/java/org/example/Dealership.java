@@ -8,14 +8,15 @@ public class Dealership {
     String address;
     String phone;
     ArrayList<Vehicle> inventory;
-//TODO Fill out Custom Getters for the lists
-    List <Vehicle> vehicles = new ArrayList<>();
+    //TODO Fill out Custom Getters for the lists
+    List<Vehicle> vehicles = new ArrayList<>();
+
     public Dealership(String name, String address, String phone, ArrayList<Vehicle> inventory) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.inventory = inventory;
-        this.vehicles=inventory;
+        this.vehicles = inventory;
 
     }
 
@@ -51,13 +52,14 @@ public class Dealership {
         this.inventory = inventory;
     }
 
-    public  List<Vehicle> getVehiclesByPrice(double min, double max) {
+    public List<Vehicle> getVehiclesByPrice(double min, double max) {
         List<Vehicle> pricelist = new ArrayList<>();
         for (Vehicle vehicle : vehicles) {
-           double price = vehicle.getPrice();
-           if (price >= min && price <= max) {
-               pricelist.add(vehicle);
-           }}
+            double price = vehicle.getPrice();
+            if (price >= min && price <= max) {
+                pricelist.add(vehicle);
+            }
+        }
         return pricelist;
     }
 
@@ -71,7 +73,6 @@ public class Dealership {
         }
         return makeAndModelList;
     }
-
 
 
     public List<Vehicle> getVehiclesByYear(int min, int max) {
@@ -95,6 +96,7 @@ public class Dealership {
         }
         return vehicleByColorList;
     }
+
     public List<Vehicle> getVehiclesByMileage(double min, double max) {
         List<Vehicle> vehicleByMilageList = new ArrayList<>();
         for (Vehicle vehicle : vehicles) {
@@ -105,6 +107,7 @@ public class Dealership {
         }
         return vehicleByMilageList;
     }
+
     public List<Vehicle> getVehiclesByType(String vehicleType) {
         List<Vehicle> vehicleListByType = new ArrayList<>();
         for (Vehicle vehicle : vehicles) {
@@ -114,9 +117,11 @@ public class Dealership {
         }
         return vehicleListByType;
     }
+
     public List<Vehicle> getAllVehicles() {
         return vehicles;
     }
+
     public void addVehicle(Vehicle vehicleToAdd) {
         if (vehicleToAdd != null) {
             vehicles.add(vehicleToAdd);
@@ -124,8 +129,21 @@ public class Dealership {
             System.out.println("Please Enter A Proper Vehicle");
         }
     }
+
     public void removeVehicle(Vehicle vehicleToRemove) {
         vehicles.remove(vehicleToRemove);
     }
+
+    public Vehicle getVehicleByVin(int vin) {
+        for (Vehicle v : vehicles) {
+            if (v.getVin() == vin) {
+                return v;
+            }
+        }
+        return null;
+    }
+
+
 }
+
 

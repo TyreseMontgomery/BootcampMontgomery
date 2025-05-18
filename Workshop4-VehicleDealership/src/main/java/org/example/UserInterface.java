@@ -46,6 +46,9 @@ public class UserInterface {
                 case "9":
                     processRemoveVehicleRequest();
                     break;
+                case "10":
+                    processSellVehicleRequest();
+                    break;
                 case "0":
                     running = false;
                     System.out.println("Exiting... Goodbye!");
@@ -73,6 +76,7 @@ public class UserInterface {
         System.out.println("7. Find Vehicles by Type");
         System.out.println("8. Add a Vehicle");
         System.out.println("9. Remove a Vehicle");
+        System.out.println("10. Sell a Vehicle");
         System.out.println("0. Exit");
         System.out.println("=============================================");
     }
@@ -158,7 +162,7 @@ public class UserInterface {
     }
 
     private void processAddVehicleRequest() {
-       // wrapped in a try catch to prevent it from writing in the wrong format. same for the Parcing.
+       // wrapped in a try catch to prevent it from writing in the wrong format. same for the Parsing.
         try {
             System.out.print("Enter VIN: ");
             int vin = Integer.parseInt(scanner.nextLine());
@@ -209,4 +213,47 @@ public class UserInterface {
             System.out.println("Invalid VIN entered.");
         }
     }
+
+
+    private void processSellVehicleRequest() {
+        System.out.print("Enter the VIN of the vehicle to sell: ");
+        int vin = Integer.parseInt(scanner.nextLine());
+
+        Vehicle v = dealership.getVehicleByVin(vin);
+        if (v == null) {
+            System.out.println("Vehicle not found with VIN: " + vin);
+            return; // Prevent null from being used
+        }
+
+        System.out.print("Enter buyer's name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter buyer's email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter contract type (sales/lease): ");
+        String contractType = scanner.nextLine();
+
+        Contract contract;
+
+        if ("sales".equalsIgnoreCase(contractType)) {
+            System.out.print("Is the vehicle financed? (true/false): ");
+            boolean isFinanced = Boolean.parseBoolean(scanner.nextLine());
+
+            double salesTax = v.getPrice() * 0.05;
+            int recordingFee = 100;
+            double processingFee = v.getPrice() < 10000 ? 295 : 495;
+            double totalPrice = v.getPrice() + salesTax + recordingFee + processingFee;
+            double monthlyPayment = isFinanced ? totalPrice / 12.0 : 0;
+
+            contract = new SalesContract("2025-05-18", name, email, v, totalPrice, monthlyPayment, salesTax, recordingFee, processingFee, isFinanced, monthlyPayment);
+        } else {
+            double monthlyPayment = v.getPrice() / 36.0;
+            contract = new LeaseContract("2025-05-18", name, email, v, v.getPrice(), monthlyPayment);
+        }
+
+        dealership.removeVehicle(v);
+        ContractFileManager.saveContract(contract);
+        System.out.println("Vehicle sold and contract saved.");
+    }
+
+
 }

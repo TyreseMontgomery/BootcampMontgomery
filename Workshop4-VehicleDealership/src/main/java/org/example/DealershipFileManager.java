@@ -10,7 +10,10 @@ public class DealershipFileManager {
 
         try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/inventory.csv"))) {
             String line = reader.readLine();
-            while ((line = reader.readLine()) != null) {
+
+
+                while ((line = reader.readLine()) != null) {
+                    if (line.trim().isEmpty()) continue; // skip empty lines
                 String[] row = line.split("\\|");
 
                 int vin = Integer.parseInt(row[0]);
