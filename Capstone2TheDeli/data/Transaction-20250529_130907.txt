@@ -1,0 +1,4 @@
+Transaction ID: 20250529_130907
+Timestamp: 20250529_130907
+org.example.Order@17f052a3
+Total: $3.50

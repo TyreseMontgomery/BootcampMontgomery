@@ -1,0 +1,13 @@
+----- ORDER RECEIPT -----
+Date: 2025-05-29 15:08:03
+-------------------------
+Order{sandwiches=[8" sandwich on White with:
+ - Steak
+ - American Cheese
+ - Peppers
+ - Mayo
+ - turkey
+ - Toasted
+Total: $13.00], signatureSandwiches=[], drinks=[small sprite ($2.00)], chipsList=[bbq chips ($1.50)]}-------------------------
+TOTAL: $16.50
+Thank you for your order!

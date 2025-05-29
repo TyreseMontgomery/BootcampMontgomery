@@ -1,0 +1,10 @@
+----- ORDER RECEIPT -----
+Date: 2025-05-29 14:25:47
+-------------------------
+Order{sandwiches=[4" sandwich on white with:
+ - turkey
+ - cheddar
+ - ketchup
+ - Toasted
+Total: $6.75], signatureSandwiches=[], drinks=[small null ($2.00)], chipsList=[null chips ($1.50)]}-------------------------
+Thank you for your order!

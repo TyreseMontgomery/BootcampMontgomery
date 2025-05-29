@@ -1,0 +1,18 @@
+_-_-_ ORDER RECEIPT _-_-_
+Date: 2025-05-29 14:59:32
+_-_-_-_-_-_-_-_-_-_-_-_-_
+Order{sandwiches=[4" sandwich on white with:
+ - turkey
+ - ham
+ - cheddar
+ - swiss
+ - lettuce
+ - tomato
+ - pickle
+ - onion
+ - mayo
+ - mustard
+ - Toasted
+Total: $8.50], signatureSandwiches=[], drinks=[small null ($2.00)], chipsList=[null chips ($1.50)]}_-_-_-_-_-_-_-_-_-_-_-_-_
+TOTAL: $12.00
+Thank you for your order!
