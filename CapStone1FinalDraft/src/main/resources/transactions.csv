@@ -11,3 +11,5 @@ date|time|description|vendor|amount
 2025-05-01|11:10:33|tester|tester|1234.0|
 2025-05-01|11:10:41|mama|mia|-223.0|2025-05-01|11:24:43|testing again|test|125.0|
 2025-05-01|11:25:03|testingpayment|jon|-200.0|
+2025-05-02|10:32:01|test|johnny test|125.0|
+2025-05-02|10:32:26|testla |johnny test|-1000.0|

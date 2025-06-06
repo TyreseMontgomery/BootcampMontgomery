@@ -180,7 +180,7 @@ public class UserInterface {
 
                 try {
                     printToppingReference();
-                    System.out.print("Topping type (MEAT, CHEESE, SAUCE, FREE_TOPPING): ");
+                    System.out.print("Topping type (MEAT, CHEESE, SAUCE, REGULAR): ");
                     ToppingType type = ToppingType.valueOf(scanner.nextLine().toUpperCase());
 
                     System.out.print("Enter topping name (e.g., ham, cheddar, lettuce): ");

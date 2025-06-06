@@ -14,7 +14,7 @@ public class Ledger {
         list.sort(Comparator.comparing(Transaction::getDate)// compares the list by the date
                 .thenComparing(Transaction::getTime)// then compares by time
                 .reversed());
-        // reverses the order creating a decending list first by date then by time if in the same date.
+        // reverses the order creating a descending list first by date then by time if in the same date.
     }
 
     public static List<Transaction> getAllTransactions() {

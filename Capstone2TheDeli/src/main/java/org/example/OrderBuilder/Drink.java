@@ -3,7 +3,7 @@ package org.example.OrderBuilder;
 import org.example.Interface.Price;
 
 public class Drink implements Price {
-    private final String size; // "Small", "Medium", "Large"
+    private final String size;
     private  String flavor;
     public Drink(String size, String flavor) {
         this.size = size;

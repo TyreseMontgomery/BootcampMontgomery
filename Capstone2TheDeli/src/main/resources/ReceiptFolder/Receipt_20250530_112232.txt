@@ -1,0 +1,24 @@
+_-_-_-ORDER RECEIPT-_-_-_
+Date: 2025-05-30 11:22:32
+_-_-_-_-_-_-_-_-_-_-_-_-_
+Order{sandwiches=[8" sandwich on multigrain with:
+ - turkey
+ - cheddar
+ - provolone
+ - lettuce
+ - tomato
+ - pickle
+ - onions
+ - mayo
+ - ranch
+ - Toasted
+Total: $12.50, 8" sandwich on White with:
+ - Steak
+ - American Cheese
+ - Peppers
+ - Mayo
+ - ham
+ - Toasted
+Total: $13.00], signatureSandwiches=[], drinks=[small sprite ($2.00)], chipsList=[bbq chips ($1.50), bbq chips ($1.50)]}-_-_-_-_-_-_-_-_-_-_-_-_-_
+TOTAL: $30.50
+Thank you for your order!
